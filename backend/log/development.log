@@ -192,3 +192,429 @@ Processing by UsersController#show as HTML
 Completed 200 OK in 8ms (Views: 5.7ms | ActiveRecord: 0.7ms | Allocations: 2028)
 
 
+Started GET "/rails/info/routes" for ::1 at 2021-02-02 13:33:51 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Rails::InfoController#routes as HTML
+  Rendering /home/ajfame11/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.4/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /home/ajfame11/.rvm/gems/ruby-2.6.1/gems/actionpack-6.0.3.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb [30 times] (Duration: 12.4ms | Allocations: 3827)
+  Rendered /home/ajfame11/.rvm/gems/ruby-2.6.1/gems/actionpack-6.0.3.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (Duration: 58.5ms | Allocations: 928)
+  Rendered /home/ajfame11/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.4/lib/rails/templates/rails/info/routes.html.erb within layouts/application (Duration: 86.5ms | Allocations: 6817)
+Completed 200 OK in 111ms (Views: 97.0ms | ActiveRecord: 0.0ms | Allocations: 8221)
+
+
+Started GET "/" for ::1 at 2021-02-02 13:34:02 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/ajfame11/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ajfame11/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 38.2ms | Allocations: 196)
+Completed 200 OK in 51ms (Views: 49.2ms | ActiveRecord: 0.0ms | Allocations: 787)
+
+
+Started GET "/users" for ::1 at 2021-02-02 13:50:53 -0500
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+SyntaxError (/mnt/c/Users/Aurel/dev/flatiron/projects/js_project/backend/app/controllers/users_controller.rb:18: syntax error, unexpected tLABEL
+...           render json: (error: "Couldn't create that user",...
+...                         ^~~~~~
+/mnt/c/Users/Aurel/dev/flatiron/projects/js_project/backend/app/controllers/users_controller.rb:18: syntax error, unexpected ',', expecting ')'
+...r: "Couldn't create that user", status: 400 ), status 400
+...                              ^
+/mnt/c/Users/Aurel/dev/flatiron/projects/js_project/backend/app/controllers/users_controller.rb:18: syntax error, unexpected tINTEGER, expecting do or '{' or '('
+...ser", status: 400 ), status 400
+...                            ^~~
+/mnt/c/Users/Aurel/dev/flatiron/projects/js_project/backend/app/controllers/users_controller.rb:27: syntax error, unexpected tLABEL
+...           render json: (error: "Couldn't update that user",...
+...                         ^~~~~~
+/mnt/c/Users/Aurel/dev/flatiron/projects/js_project/backend/app/controllers/users_controller.rb:27: syntax error, unexpected ',', expecting ')'
+...r: "Couldn't update that user", status: 400 ), status 400
+...                              ^
+/mnt/c/Users/Aurel/dev/flatiron/projects/js_project/backend/app/controllers/users_controller.rb:27: syntax error, unexpected tINTEGER, expecting do or '{' or '('
+...ser", status: 400 ), status 400
+...                            ^~~):
+  
+app/controllers/users_controller.rb:18: syntax error, unexpected tLABEL
+app/controllers/users_controller.rb:18: syntax error, unexpected ',', expecting ')'
+app/controllers/users_controller.rb:18: syntax error, unexpected tINTEGER, expecting do or '{' or '('
+app/controllers/users_controller.rb:27: syntax error, unexpected tLABEL
+app/controllers/users_controller.rb:27: syntax error, unexpected ',', expecting ')'
+app/controllers/users_controller.rb:27: syntax error, unexpected tINTEGER, expecting do or '{' or '('
+app/controllers/users_controller.rb:18: syntax error, unexpected tLABEL
+app/controllers/users_controller.rb:18: syntax error, unexpected ',', expecting ')'
+app/controllers/users_controller.rb:18: syntax error, unexpected tINTEGER, expecting do or '{' or '('
+app/controllers/users_controller.rb:27: syntax error, unexpected tLABEL
+app/controllers/users_controller.rb:27: syntax error, unexpected ',', expecting ')'
+app/controllers/users_controller.rb:27: syntax error, unexpected tINTEGER, expecting do or '{' or '('
+Started GET "/user" for ::1 at 2021-02-02 13:51:24 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+ActionController::RoutingError (No route matches [GET] "/user"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.7) lib/puma/configuration.rb:228:in `call'
+puma (4.3.7) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.7) lib/puma/server.rb:472:in `process_client'
+puma (4.3.7) lib/puma/server.rb:328:in `block in run'
+puma (4.3.7) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/users" for ::1 at 2021-02-02 13:51:29 -0500
+  
+SyntaxError (/mnt/c/Users/Aurel/dev/flatiron/projects/js_project/backend/app/controllers/users_controller.rb:18: syntax error, unexpected tLABEL
+...           render json: (error: "Couldn't create that user",...
+...                         ^~~~~~
+/mnt/c/Users/Aurel/dev/flatiron/projects/js_project/backend/app/controllers/users_controller.rb:18: syntax error, unexpected ',', expecting ')'
+...r: "Couldn't create that user", status: 400 ), status 400
+...                              ^
+/mnt/c/Users/Aurel/dev/flatiron/projects/js_project/backend/app/controllers/users_controller.rb:18: syntax error, unexpected tINTEGER, expecting do or '{' or '('
+...ser", status: 400 ), status 400
+...                            ^~~
+/mnt/c/Users/Aurel/dev/flatiron/projects/js_project/backend/app/controllers/users_controller.rb:27: syntax error, unexpected tLABEL
+...           render json: (error: "Couldn't update that user",...
+...                         ^~~~~~
+/mnt/c/Users/Aurel/dev/flatiron/projects/js_project/backend/app/controllers/users_controller.rb:27: syntax error, unexpected ',', expecting ')'
+...r: "Couldn't update that user", status: 400 ), status 400
+...                              ^
+/mnt/c/Users/Aurel/dev/flatiron/projects/js_project/backend/app/controllers/users_controller.rb:27: syntax error, unexpected tINTEGER, expecting do or '{' or '('
+...ser", status: 400 ), status 400
+...                            ^~~):
+  
+app/controllers/users_controller.rb:18: syntax error, unexpected tLABEL
+app/controllers/users_controller.rb:18: syntax error, unexpected ',', expecting ')'
+app/controllers/users_controller.rb:18: syntax error, unexpected tINTEGER, expecting do or '{' or '('
+app/controllers/users_controller.rb:27: syntax error, unexpected tLABEL
+app/controllers/users_controller.rb:27: syntax error, unexpected ',', expecting ')'
+app/controllers/users_controller.rb:27: syntax error, unexpected tINTEGER, expecting do or '{' or '('
+app/controllers/users_controller.rb:18: syntax error, unexpected tLABEL
+app/controllers/users_controller.rb:18: syntax error, unexpected ',', expecting ')'
+app/controllers/users_controller.rb:18: syntax error, unexpected tINTEGER, expecting do or '{' or '('
+app/controllers/users_controller.rb:27: syntax error, unexpected tLABEL
+app/controllers/users_controller.rb:27: syntax error, unexpected ',', expecting ')'
+app/controllers/users_controller.rb:27: syntax error, unexpected tINTEGER, expecting do or '{' or '('
+Started GET "/users" for ::1 at 2021-02-02 13:52:34 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+SyntaxError (/mnt/c/Users/Aurel/dev/flatiron/projects/js_project/backend/app/controllers/users_controller.rb:18: syntax error, unexpected tLABEL
+...           render json: (error: "Couldn't create that user",...
+...                         ^~~~~~
+/mnt/c/Users/Aurel/dev/flatiron/projects/js_project/backend/app/controllers/users_controller.rb:18: syntax error, unexpected ',', expecting ')'
+...r: "Couldn't create that user", status: 400 )
+...                              ^
+/mnt/c/Users/Aurel/dev/flatiron/projects/js_project/backend/app/controllers/users_controller.rb:27: syntax error, unexpected tLABEL
+...           render json: (error: "Couldn't update that user",...
+...                         ^~~~~~
+/mnt/c/Users/Aurel/dev/flatiron/projects/js_project/backend/app/controllers/users_controller.rb:27: syntax error, unexpected ',', expecting ')'
+...r: "Couldn't update that user", status: 400 )
+...                              ^):
+  
+app/controllers/users_controller.rb:18: syntax error, unexpected tLABEL
+app/controllers/users_controller.rb:18: syntax error, unexpected ',', expecting ')'
+app/controllers/users_controller.rb:27: syntax error, unexpected tLABEL
+app/controllers/users_controller.rb:27: syntax error, unexpected ',', expecting ')'
+app/controllers/users_controller.rb:18: syntax error, unexpected tLABEL
+app/controllers/users_controller.rb:18: syntax error, unexpected ',', expecting ')'
+app/controllers/users_controller.rb:27: syntax error, unexpected tLABEL
+app/controllers/users_controller.rb:27: syntax error, unexpected ',', expecting ')'
+Started GET "/users" for ::1 at 2021-02-02 13:53:16 -0500
+  
+SyntaxError (/mnt/c/Users/Aurel/dev/flatiron/projects/js_project/backend/app/controllers/users_controller.rb:18: syntax error, unexpected tLABEL
+...           render json: (error: "Couldn't create that user",...
+...                         ^~~~~~
+/mnt/c/Users/Aurel/dev/flatiron/projects/js_project/backend/app/controllers/users_controller.rb:18: syntax error, unexpected ',', expecting ')'
+...r: "Couldn't create that user", status: 400 )
+...                              ^
+/mnt/c/Users/Aurel/dev/flatiron/projects/js_project/backend/app/controllers/users_controller.rb:27: syntax error, unexpected tLABEL
+...           render json: (error: "Couldn't update that user",...
+...                         ^~~~~~
+/mnt/c/Users/Aurel/dev/flatiron/projects/js_project/backend/app/controllers/users_controller.rb:27: syntax error, unexpected ',', expecting ')'
+...r: "Couldn't update that user", status: 400 )
+...                              ^):
+  
+app/controllers/users_controller.rb:18: syntax error, unexpected tLABEL
+app/controllers/users_controller.rb:18: syntax error, unexpected ',', expecting ')'
+app/controllers/users_controller.rb:27: syntax error, unexpected tLABEL
+app/controllers/users_controller.rb:27: syntax error, unexpected ',', expecting ')'
+app/controllers/users_controller.rb:18: syntax error, unexpected tLABEL
+app/controllers/users_controller.rb:18: syntax error, unexpected ',', expecting ')'
+app/controllers/users_controller.rb:27: syntax error, unexpected tLABEL
+app/controllers/users_controller.rb:27: syntax error, unexpected ',', expecting ')'
+Started GET "/users" for ::1 at 2021-02-02 13:54:30 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+SyntaxError (/mnt/c/Users/Aurel/dev/flatiron/projects/js_project/backend/app/controllers/users_controller.rb:18: syntax error, unexpected tLABEL
+...           render json: (error: "Couldn't create that user",...
+...                         ^~~~~~
+/mnt/c/Users/Aurel/dev/flatiron/projects/js_project/backend/app/controllers/users_controller.rb:18: syntax error, unexpected ',', expecting ')'
+...r: "Couldn't create that user", status: 400 )
+...                              ^
+/mnt/c/Users/Aurel/dev/flatiron/projects/js_project/backend/app/controllers/users_controller.rb:28: syntax error, unexpected tLABEL
+...           render json: (error: "Couldn't update that user",...
+...                         ^~~~~~
+/mnt/c/Users/Aurel/dev/flatiron/projects/js_project/backend/app/controllers/users_controller.rb:28: syntax error, unexpected ',', expecting ')'
+...r: "Couldn't update that user", status: 400 )
+...                              ^
+/mnt/c/Users/Aurel/dev/flatiron/projects/js_project/backend/app/controllers/users_controller.rb:31: syntax error, unexpected end, expecting end-of-input
+    end
+    ^~~):
+  
+app/controllers/users_controller.rb:18: syntax error, unexpected tLABEL
+app/controllers/users_controller.rb:18: syntax error, unexpected ',', expecting ')'
+app/controllers/users_controller.rb:28: syntax error, unexpected tLABEL
+app/controllers/users_controller.rb:28: syntax error, unexpected ',', expecting ')'
+app/controllers/users_controller.rb:31: syntax error, unexpected end, expecting end-of-input
+app/controllers/users_controller.rb:18: syntax error, unexpected tLABEL
+app/controllers/users_controller.rb:18: syntax error, unexpected ',', expecting ')'
+app/controllers/users_controller.rb:28: syntax error, unexpected tLABEL
+app/controllers/users_controller.rb:28: syntax error, unexpected ',', expecting ')'
+app/controllers/users_controller.rb:31: syntax error, unexpected end, expecting end-of-input
+Started GET "/users" for ::1 at 2021-02-02 13:55:01 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+SyntaxError (/mnt/c/Users/Aurel/dev/flatiron/projects/js_project/backend/app/controllers/users_controller.rb:18: syntax error, unexpected tLABEL
+...           render json: (error: "Couldn't create that user",...
+...                         ^~~~~~
+/mnt/c/Users/Aurel/dev/flatiron/projects/js_project/backend/app/controllers/users_controller.rb:18: syntax error, unexpected ',', expecting ')'
+...r: "Couldn't create that user", status: 400 ), status 400
+...                              ^
+/mnt/c/Users/Aurel/dev/flatiron/projects/js_project/backend/app/controllers/users_controller.rb:18: syntax error, unexpected tINTEGER, expecting do or '{' or '('
+...ser", status: 400 ), status 400
+...                            ^~~
+/mnt/c/Users/Aurel/dev/flatiron/projects/js_project/backend/app/controllers/users_controller.rb:27: syntax error, unexpected tLABEL
+...           render json: (error: "Couldn't update that user",...
+...                         ^~~~~~
+/mnt/c/Users/Aurel/dev/flatiron/projects/js_project/backend/app/controllers/users_controller.rb:27: syntax error, unexpected ',', expecting ')'
+...r: "Couldn't update that user", status: 400 ), status 400
+...                              ^
+/mnt/c/Users/Aurel/dev/flatiron/projects/js_project/backend/app/controllers/users_controller.rb:27: syntax error, unexpected tINTEGER, expecting do or '{' or '('
+...ser", status: 400 ), status 400
+...                            ^~~):
+  
+app/controllers/users_controller.rb:18: syntax error, unexpected tLABEL
+app/controllers/users_controller.rb:18: syntax error, unexpected ',', expecting ')'
+app/controllers/users_controller.rb:18: syntax error, unexpected tINTEGER, expecting do or '{' or '('
+app/controllers/users_controller.rb:27: syntax error, unexpected tLABEL
+app/controllers/users_controller.rb:27: syntax error, unexpected ',', expecting ')'
+app/controllers/users_controller.rb:27: syntax error, unexpected tINTEGER, expecting do or '{' or '('
+app/controllers/users_controller.rb:18: syntax error, unexpected tLABEL
+app/controllers/users_controller.rb:18: syntax error, unexpected ',', expecting ')'
+app/controllers/users_controller.rb:18: syntax error, unexpected tINTEGER, expecting do or '{' or '('
+app/controllers/users_controller.rb:27: syntax error, unexpected tLABEL
+app/controllers/users_controller.rb:27: syntax error, unexpected ',', expecting ')'
+app/controllers/users_controller.rb:27: syntax error, unexpected tINTEGER, expecting do or '{' or '('
+Started GET "/users" for ::1 at 2021-02-02 13:56:12 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms | Allocations: 1043)
+
+
+  
+SyntaxError (/mnt/c/Users/Aurel/dev/flatiron/projects/js_project/backend/app/models/user.rb:2: syntax error, unexpected tIDENTIFIER, expecting end
+    has_many :scores dependent: :destroy
+                     ^~~~~~~~~):
+  
+app/models/user.rb:2: syntax error, unexpected tIDENTIFIER, expecting end
+app/models/user.rb:2: syntax error, unexpected tIDENTIFIER, expecting end
+app/controllers/users_controller.rb:4:in `index'
+Started GET "/users" for ::1 at 2021-02-02 13:56:37 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms | Allocations: 169)
+
+
+  
+SyntaxError (/mnt/c/Users/Aurel/dev/flatiron/projects/js_project/backend/app/models/user.rb:2: syntax error, unexpected tIDENTIFIER, expecting end
+    has_many :scores dependent::destroy
+                     ^~~~~~~~~):
+  
+app/models/user.rb:2: syntax error, unexpected tIDENTIFIER, expecting end
+app/models/user.rb:2: syntax error, unexpected tIDENTIFIER, expecting end
+app/controllers/users_controller.rb:4:in `index'
+Started GET "/users" for ::1 at 2021-02-02 13:57:25 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms | Allocations: 171)
+
+
+  
+SyntaxError (/mnt/c/Users/Aurel/dev/flatiron/projects/js_project/backend/app/models/user.rb:2: syntax error, unexpected tIDENTIFIER, expecting end
+    has_many :scores dependent::destroy
+                     ^~~~~~~~~
+/mnt/c/Users/Aurel/dev/flatiron/projects/js_project/backend/app/models/user.rb:4: syntax error, unexpected end, expecting end-of-input):
+  
+app/models/user.rb:2: syntax error, unexpected tIDENTIFIER, expecting end
+app/models/user.rb:4: syntax error, unexpected end, expecting end-of-input
+app/models/user.rb:2: syntax error, unexpected tIDENTIFIER, expecting end
+app/models/user.rb:4: syntax error, unexpected end, expecting end-of-input
+app/controllers/users_controller.rb:4:in `index'
+Started GET "/users" for ::1 at 2021-02-02 13:57:59 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mScore Load (0.2ms)[0m  [1m[34mSELECT "scores".* FROM "scores" WHERE "scores"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (23.78ms)
+Completed 200 OK in 76ms (Views: 45.2ms | ActiveRecord: 2.9ms | Allocations: 11625)
+
+
+Started GET "/users" for ::1 at 2021-02-02 13:58:34 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+SyntaxError (/mnt/c/Users/Aurel/dev/flatiron/projects/js_project/backend/app/controllers/users_controller.rb:18: syntax error, unexpected tLABEL
+...           render json: (error: "Couldn't create that user",...
+...                         ^~~~~~
+/mnt/c/Users/Aurel/dev/flatiron/projects/js_project/backend/app/controllers/users_controller.rb:18: syntax error, unexpected ',', expecting ')'
+...r: "Couldn't create that user", status: 400 ), status 400
+...                              ^
+/mnt/c/Users/Aurel/dev/flatiron/projects/js_project/backend/app/controllers/users_controller.rb:18: syntax error, unexpected tINTEGER, expecting do or '{' or '('
+...ser", status: 400 ), status 400
+...                            ^~~):
+  
+app/controllers/users_controller.rb:18: syntax error, unexpected tLABEL
+app/controllers/users_controller.rb:18: syntax error, unexpected ',', expecting ')'
+app/controllers/users_controller.rb:18: syntax error, unexpected tINTEGER, expecting do or '{' or '('
+app/controllers/users_controller.rb:18: syntax error, unexpected tLABEL
+app/controllers/users_controller.rb:18: syntax error, unexpected ',', expecting ')'
+app/controllers/users_controller.rb:18: syntax error, unexpected tINTEGER, expecting do or '{' or '('
+Started GET "/users" for ::1 at 2021-02-02 13:59:12 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+SyntaxError (/mnt/c/Users/Aurel/dev/flatiron/projects/js_project/backend/app/controllers/users_controller.rb:18: syntax error, unexpected tLABEL
+...           render json: (error: "Couldn't create that user",...
+...                         ^~~~~~
+/mnt/c/Users/Aurel/dev/flatiron/projects/js_project/backend/app/controllers/users_controller.rb:18: syntax error, unexpected ',', expecting ')'
+...r: "Couldn't create that user", status: 400 ) #, status 400
+...                              ^):
+  
+app/controllers/users_controller.rb:18: syntax error, unexpected tLABEL
+app/controllers/users_controller.rb:18: syntax error, unexpected ',', expecting ')'
+app/controllers/users_controller.rb:18: syntax error, unexpected tLABEL
+app/controllers/users_controller.rb:18: syntax error, unexpected ',', expecting ')'
+Started GET "/users" for ::1 at 2021-02-02 14:00:08 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+SyntaxError (/mnt/c/Users/Aurel/dev/flatiron/projects/js_project/backend/app/controllers/users_controller.rb:18: syntax error, unexpected tLABEL
+...           render json: (error: "Couldn't create that user")...
+...                         ^~~~~~):
+  
+app/controllers/users_controller.rb:18: syntax error, unexpected tLABEL
+app/controllers/users_controller.rb:18: syntax error, unexpected tLABEL
+Started GET "/users" for ::1 at 2021-02-02 14:00:44 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mScore Load (0.2ms)[0m  [1m[34mSELECT "scores".* FROM "scores" WHERE "scores"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (13.26ms)
+Completed 200 OK in 26ms (Views: 21.0ms | ActiveRecord: 3.2ms | Allocations: 11544)
+
+
+Started GET "/users" for ::1 at 2021-02-02 14:00:49 -0500
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mScore Load (0.2ms)[0m  [1m[34mSELECT "scores".* FROM "scores" WHERE "scores"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (5.39ms)
+Completed 200 OK in 9ms (Views: 8.4ms | ActiveRecord: 0.5ms | Allocations: 2307)
+
+
+Started GET "/users" for ::1 at 2021-02-02 14:08:35 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mScore Load (0.3ms)[0m  [1m[34mSELECT "scores".* FROM "scores" WHERE "scores"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (16.59ms)
+Completed 200 OK in 26ms (Views: 23.2ms | ActiveRecord: 0.7ms | Allocations: 10875)
+
+
+Started GET "/users" for ::1 at 2021-02-02 14:09:53 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mScore Load (0.2ms)[0m  [1m[34mSELECT "scores".* FROM "scores" WHERE "scores"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (16.93ms)
+Completed 200 OK in 29ms (Views: 23.0ms | ActiveRecord: 2.9ms | Allocations: 11518)
+
+
+Started GET "/users/1" for ::1 at 2021-02-02 14:09:59 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `show'
+[active_model_serializers]   [1m[36mScore Load (0.2ms)[0m  [1m[34mSELECT "scores".* FROM "scores" WHERE "scores"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:10:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (4.49ms)
+Completed 200 OK in 18ms (Views: 13.7ms | ActiveRecord: 0.6ms | Allocations: 2162)
+
+
+Started GET "/users" for ::1 at 2021-02-02 14:10:05 -0500
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mScore Load (0.2ms)[0m  [1m[34mSELECT "scores".* FROM "scores" WHERE "scores"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (9.67ms)
+Completed 200 OK in 13ms (Views: 12.6ms | ActiveRecord: 0.5ms | Allocations: 2304)
+
+
+Started GET "/users" for ::1 at 2021-02-02 14:10:12 -0500
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mScore Load (0.3ms)[0m  [1m[34mSELECT "scores".* FROM "scores" WHERE "scores"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (4.58ms)
+Completed 200 OK in 14ms (Views: 12.9ms | ActiveRecord: 0.6ms | Allocations: 2309)
+
+
+Started GET "/users" for ::1 at 2021-02-02 14:11:07 -0500
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mScore Load (0.2ms)[0m  [1m[34mSELECT "scores".* FROM "scores" WHERE "scores"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (4.82ms)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.6ms | Allocations: 2306)
+
+
+Started GET "/users" for ::1 at 2021-02-02 14:23:23 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mScore Load (0.4ms)[0m  [1m[34mSELECT "scores".* FROM "scores" WHERE "scores"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (15.65ms)
+Completed 200 OK in 40ms (Views: 38.6ms | ActiveRecord: 0.8ms | Allocations: 2339)
+
+
+Started GET "/users/1" for ::1 at 2021-02-02 14:23:27 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `show'
+[active_model_serializers]   [1m[36mScore Load (0.3ms)[0m  [1m[34mSELECT "scores".* FROM "scores" WHERE "scores"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:10:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (4.49ms)
+Completed 200 OK in 13ms (Views: 5.4ms | ActiveRecord: 0.7ms | Allocations: 2006)
+
+

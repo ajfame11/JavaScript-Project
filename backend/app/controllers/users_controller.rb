@@ -14,9 +14,9 @@ class UsersController < ApplicationController
         user = User.create(user_params)
         if user.save
             render json: user
-        else
-            render json: (error: "Couldn't create that user", status: 400 ), status 400
-        end
+         else
+            render json: {error: "Couldn't create that user", status: 400 }#, status 400
+         end
     end
 
     def update
@@ -24,8 +24,8 @@ class UsersController < ApplicationController
         if user.update(user_params)
             render json: user
         else
-            render json: (error: "Couldn't update that user", status: 400 ), status 400
-        end
+            render json: {error: "Couldn't update that user", status: 400 }#, status 400
+         end
     end
 
     def destroy
