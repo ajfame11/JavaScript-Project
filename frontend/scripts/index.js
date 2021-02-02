@@ -1,3 +1,5 @@
+const api = new APIAdapter
+
 // HTML Elemenets
 const statusDiv = document.querySelector('.status');
 const resetDiv = document.querySelector('.reset');
@@ -13,7 +15,7 @@ let xIsNext = true; //If true then its X turn, false then its O turn
 let winner = null;
 
 //Function
-const letterToSymbol = (letter) => letter === 'x' ? xSymbol : oSymbol; //Converts 'x' & 'o' to thesymbol constant counterparts through the reactor'?'
+const letterToSymbol = (letter) => letter === 'x' ? xSymbol : oSymbol; //Converts 'x' & 'o' to the symbol constant counterparts through the reactor'?'
 
 const handleWin = (letter) => {
     gameIsLive = false;

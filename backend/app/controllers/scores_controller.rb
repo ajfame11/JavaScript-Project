@@ -7,12 +7,12 @@ class ScoresController < ApplicationController
     
     def show
         score = Score.find_by_id(params[:id])
-        render json: Score
+        render json: score
     end
 
     def create 
         user = User.find_or_create_by(user_params)
-        score = user.Score.build(score_params)
+        score = user.scores.build(score_params)
         if user.valid? && score.save
             render json: score
         else
@@ -42,6 +42,6 @@ class ScoresController < ApplicationController
     end
 
     def score_params
-        params.require(:score).permit(:name)
+        params.require(:score).permit(:wins, :loses, :draws)
     end
 end
