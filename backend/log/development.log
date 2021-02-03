@@ -822,3 +822,108 @@ Processing by UsersController#index as HTML
 Completed 200 OK in 13ms (Views: 11.3ms | ActiveRecord: 1.1ms | Allocations: 3559)
 
 
+Started POST "/scores" for ::1 at 2021-02-02 17:36:09 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ScoresController#create as */*
+  Parameters: {"user"=>{"name"=>"Aurel"}, "score"=>{"wins"=>32, "loses"=>6, "draws"=>3}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Aurel"], ["LIMIT", 1]]
+  ↳ app/controllers/scores_controller.rb:14:in `create'
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.5ms | Allocations: 5547)
+
+
+  
+NoMethodError (undefined method `Score' for #<User:0x00007fa99949d000>
+Did you mean?  scores
+               scores=):
+  
+app/controllers/scores_controller.rb:15:in `create'
+Started GET "/scores" for ::1 at 2021-02-02 17:36:38 -0500
+Processing by ScoresController#index as HTML
+  [1m[36mScore Load (0.5ms)[0m  [1m[34mSELECT "scores".* FROM "scores"[0m
+  ↳ app/controllers/scores_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.34ms)
+Completed 200 OK in 13ms (Views: 12.4ms | ActiveRecord: 0.5ms | Allocations: 5674)
+
+
+Started POST "/scores" for ::1 at 2021-02-02 17:42:08 -0500
+Processing by ScoresController#create as */*
+  Parameters: {"user"=>{"name"=>"Aurel"}, "score"=>{"wins"=>32, "loses"=>6, "draws"=>3}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Aurel"], ["LIMIT", 1]]
+  ↳ app/controllers/scores_controller.rb:14:in `create'
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.4ms | Allocations: 2290)
+
+
+  
+NoMethodError (undefined method `Score' for #<User:0x00007fa998f77f30>
+Did you mean?  scores
+               scores=):
+  
+app/controllers/scores_controller.rb:15:in `create'
+Started POST "/scores" for ::1 at 2021-02-02 17:48:27 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ScoresController#create as */*
+  Parameters: {"user"=>{"name"=>"Aurel"}, "score"=>{"wins"=>32, "loses"=>6, "draws"=>3}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Aurel"], ["LIMIT", 1]]
+  ↳ app/controllers/scores_controller.rb:14:in `create'
+[31mUnpermitted parameters: :wins, :loses, :draws[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/scores_controller.rb:16:in `create'
+  [1m[36mScore Create (1.6ms)[0m  [1m[32mINSERT INTO "scores" ("user_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["user_id", 1], ["created_at", "2021-02-02 22:48:28.012997"], ["updated_at", "2021-02-02 22:48:28.012997"]]
+  ↳ app/controllers/scores_controller.rb:16:in `create'
+  [1m[35m (8.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/scores_controller.rb:16:in `create'
+[active_model_serializers] Rendered ScoreSerializer with ActiveModelSerializers::Adapter::Attributes (0.36ms)
+Completed 200 OK in 66ms (Views: 8.8ms | ActiveRecord: 10.8ms | Allocations: 15471)
+
+
+Started POST "/scores" for ::1 at 2021-02-02 17:53:29 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ScoresController#create as */*
+  Parameters: {"user"=>{"name"=>"Jason"}, "score"=>{"wins"=>2, "loses"=>6, "draws"=>3}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Jason"], ["LIMIT", 1]]
+  ↳ app/controllers/scores_controller.rb:14:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/scores_controller.rb:16:in `create'
+  [1m[36mScore Create (1.3ms)[0m  [1m[32mINSERT INTO "scores" ("wins", "loses", "draws", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["wins", 2], ["loses", 6], ["draws", 3], ["user_id", 2], ["created_at", "2021-02-02 22:53:29.593587"], ["updated_at", "2021-02-02 22:53:29.593587"]]
+  ↳ app/controllers/scores_controller.rb:16:in `create'
+  [1m[35m (6.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/scores_controller.rb:16:in `create'
+[active_model_serializers] Rendered ScoreSerializer with ActiveModelSerializers::Adapter::Attributes (0.3ms)
+Completed 200 OK in 36ms (Views: 2.4ms | ActiveRecord: 10.5ms | Allocations: 14494)
+
+
+Started POST "/scores" for ::1 at 2021-02-02 17:58:31 -0500
+Processing by ScoresController#create as */*
+  Parameters: {"user"=>{"name"=>"Mary"}, "score"=>{"wins"=>2, "loses"=>6, "draws"=>3}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Mary"], ["LIMIT", 1]]
+  ↳ app/controllers/scores_controller.rb:14:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/scores_controller.rb:14:in `create'
+  [1m[36mUser Create (3.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Mary"], ["created_at", "2021-02-02 22:58:31.341123"], ["updated_at", "2021-02-02 22:58:31.341123"]]
+  ↳ app/controllers/scores_controller.rb:14:in `create'
+  [1m[35m (8.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/scores_controller.rb:14:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/scores_controller.rb:16:in `create'
+  [1m[36mScore Create (1.2ms)[0m  [1m[32mINSERT INTO "scores" ("wins", "loses", "draws", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["wins", 2], ["loses", 6], ["draws", 3], ["user_id", 3], ["created_at", "2021-02-02 22:58:31.359900"], ["updated_at", "2021-02-02 22:58:31.359900"]]
+  ↳ app/controllers/scores_controller.rb:16:in `create'
+  [1m[35m (6.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/scores_controller.rb:16:in `create'
+[active_model_serializers] Rendered ScoreSerializer with ActiveModelSerializers::Adapter::Attributes (0.27ms)
+Completed 200 OK in 37ms (Views: 1.3ms | ActiveRecord: 19.3ms | Allocations: 13755)
+
+
+Started GET "/users" for ::1 at 2021-02-02 17:58:48 -0500
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mScore Load (0.4ms)[0m  [1m[34mSELECT "scores".* FROM "scores" WHERE "scores"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mScore Load (0.5ms)[0m  [1m[34mSELECT "scores".* FROM "scores" WHERE "scores"."user_id" = ?[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mScore Load (0.3ms)[0m  [1m[34mSELECT "scores".* FROM "scores" WHERE "scores"."user_id" = ?[0m  [["user_id", 3]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (11.46ms)
+Completed 200 OK in 16ms (Views: 14.2ms | ActiveRecord: 1.6ms | Allocations: 5667)
+
+

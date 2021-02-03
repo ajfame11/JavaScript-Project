@@ -25,6 +25,7 @@ const handleWin = (letter) => {
         } else {
         statusDiv.innerHTML = `<span>${letterToSymbol(winner)} has won!</span>`; //Place <span> here for when 'o' wins, status color becomes white
     }
+    
 }
 
 const checkGameStatus = () => {
