@@ -6,29 +6,69 @@
     <title>Tic-Tac-Toe</title>
     <link href="css/style.css" rel="stylesheet">
     <script src="scripts/services/apiadapter.js" charset="utf-8" defer></script>
+    <script src="scripts/components/user.js" charset="utf-8" defer></script>
     <script src="scripts/index.js" charset="utf-8" defer></script>
 </head>
 <body>
-    <div class="container">
-        <h1 class="title">Tic <span>Tac</span> Toe</h1>
+  <div class="container">
+      <h1 class="title">Tic <span>Tac</span> Toe</h1>
 
-        <div class="status-action">
-            <div class="status">x is next</div>
-            <div class="reset">Reset</div>
-        </div>
+      <div class="status-action">
+          <div class="status">x is next</div>
+          <div class="reset">Reset</div>
+      </div>
 
-        <div class="game-grid">
-            <div class="game-cell top-left"></div>
-            <div class="game-cell top-middle"></div>
-            <div class="game-cell top-right"></div>
-            <div class="game-cell middle-left"></div>
-            <div class="game-cell middle-middle"></div>
-            <div class="game-cell middle-right"></div>
-            <div class="game-cell bottom-left"></div>
-            <div class="game-cell bottom-middle"></div>
-            <div class="game-cell bottom-right"></div>
-        </div>
-
+      <div class="game-grid">
+          <div class="game-cell top-left"></div>
+          <div class="game-cell top-middle"></div>
+          <div class="game-cell top-right"></div>
+          <div class="game-cell middle-left"></div>
+          <div class="game-cell middle-middle"></div>
+          <div class="game-cell middle-right"></div>
+          <div class="game-cell bottom-left"></div>
+          <div class="game-cell bottom-middle"></div>
+          <div class="game-cell bottom-right"></div>
+      </div>
+  </div>
+<!-- Current User Info  -->
+  <div class="user-info-div">
+    <span id="player"></span>
+    <span id="user-btns">
+      <button id="edit-btn">edit</button>
+      <button id="delete-btn">delete</button>
+    </span>
+    <br>
+    <!-- Current Users Games History -->
+    <p id="total"></p><br>
+    <p id="win"></p><br>
+    <p id="lose"></p><br>
+    <p id="draw"></p><br>
+  </div>
+  <!-- Modal for user to login or signup -->
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <input type="text" name="username" class="form-control" id="userinput">
+      <button class="btn btn-default" id="submit-btn">Add Name</button>
     </div>
+  </div>
+<!-- Modal to Edit user name -->
+  <div id="edit-modal" class="modal">
+    <div class="modal-content">
+      <span class="close close-edit">&times;</span>
+      <input type="text" name="username" class="form-control" id="new_name">
+      <button class="btn btn-default" id="edit-submit-btn">Update Name</button>
+    </div>
+  </div>
+<!-- Modal for confirmation to save game -->
+  <div id="save-score-modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <p>Do you want to save score ?</p>
+      <button class="btn btn-default" id="save-score">Yes</button>
+      <button class="btn btn-danger" id="not-save-score">No</button>
+    </div>
+  </div>
+
 </body>
 </html>

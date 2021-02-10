@@ -22,9 +22,10 @@ const handleWin = (letter) => {
     winner = letter;
     if (winner === 'x') { 
         statusDiv.innerHTML = `${letterToSymbol(winner)} has won!`;  //Place here for when 'x' wins, status color stays black
-        } else {
+      } else {
         statusDiv.innerHTML = `<span>${letterToSymbol(winner)} has won!</span>`; //Place <span> here for when 'o' wins, status color becomes white
-    }
+      }
+      document.getElementById("save-score-modal").style.display = "block"; //to display modal for game save
     
 }
 
@@ -83,6 +84,7 @@ const checkGameStatus = () => {
       } else if (topleft && topmiddle && topright && middleleft && middlemiddle && middleright && bottomleft && bottommiddle && bottomright) {
         gameIsLive = false;
         statusDiv.innerHTML = 'Game is tied!';
+        document.getElementById("save-score-modal").style.display = "block"; //modal to save game
     } else {
         xIsNext = !xIsNext; //Will make (xIsNext) be opposite of current value; Ex: true becomes false
         if (xIsNext) {
@@ -123,9 +125,43 @@ const handleCellClick = (event) => { //
     }
 };
 
-// event listeners
 resetDiv.addEventListener('click',handleReset ); //When the reset button is clicked, then the function: handleReset starts
 
 for (const cellDiv of cellDivs) {
     cellDiv.addEventListener('click', handleCellClick) //When the space on the game is clicked, then the function handleCellClick starts
 };
+
+// Configuration of New User modal to display on page load
+var span = document.getElementsByClassName("close")[0]; 
+
+// Handling modal close click
+span.onclick = function() {
+  document.getElementById("myModal").style.display = "none";
+}
+
+// Configuration of Edit modal to display on page load
+var span = document.getElementsByClassName("close-edit")[0];
+
+// Configuration of Edit User modal to display on page load
+span.onclick = function() {
+  document.getElementById("edit-modal").style.display = "none";
+}
+
+// Configuration of Modal while clicking on edit button 
+var edit = document.getElementById("edit-btn")
+edit.onclick = function() {
+  const player_name = document.getElementById("player").innerHTML;
+  document.getElementById("edit-modal").style.display = "block";
+  document.getElementById("new_name").value = player_name;
+}
+
+// Handling of game save modal close button
+var not_save_score = document.getElementById("not-save-score");
+not_save_score.onclick = function() {
+ document.getElementById("save-score-modal").style.display = "none"; 
+}
+
+document.getElementById("myModal").style.display = "block";
+
+// Intialization of User class
+const user = new User

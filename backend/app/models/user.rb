@@ -1,3 +1,5 @@
 class User < ApplicationRecord
-    has_many :games 
+    # User's relationship with games and scores
+    has_many :games, dependent: :destroy 
+    has_many :scores, dependent: :destroy
 end
