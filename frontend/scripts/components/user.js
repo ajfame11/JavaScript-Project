@@ -25,7 +25,7 @@ class User {
                 document.getElementById("player").innerHTML = json_object["name"]
                 document.getElementById("total").innerHTML = "total games :" + json_object["total_games"]
                 document.getElementById("win").innerHTML = "total wins of X :" + json_object["total_wins"]
-                document.getElementById("lose").innerHTML = "total lose of O :" + json_object["total_loses"]
+                document.getElementById("lose").innerHTML = "total wins of O :" + json_object["total_loses"]
                 document.getElementById("draw").innerHTML = "total draws :" + json_object["total_draw"]
                 document.getElementById("user-btns").style.display = "block";
                 document.getElementById("myModal").style.display = "none";
