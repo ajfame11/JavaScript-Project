@@ -135,31 +135,31 @@ for (const cellDiv of cellDivs) {
 var span = document.getElementsByClassName("close")[0]; 
 
 // Handling modal close click
-span.onclick = function() {
+span.addEventListener('click', function() {
   document.getElementById("myModal").style.display = "none";
-}
+})
 
 // Configuration of Edit modal to display on page load
 var span = document.getElementsByClassName("close-edit")[0];
 
 // Configuration of Edit User modal to display on page load
-span.onclick = function() {
+span.addEventListener('click', function() {
   document.getElementById("edit-modal").style.display = "none";
-}
+})
 
 // Configuration of Modal while clicking on edit button 
 var edit = document.getElementById("edit-btn")
-edit.onclick = function() {
+edit.addEventListener('click', function() {
   const player_name = document.getElementById("player").innerHTML;
   document.getElementById("edit-modal").style.display = "block";
   document.getElementById("new_name").value = player_name;
-}
+})
 
 // Handling of game save modal close button
 var not_save_score = document.getElementById("not-save-score");
-not_save_score.onclick = function() {
+not_save_score.addEventListener('click', function() {
  document.getElementById("save-score-modal").style.display = "none"; 
-}
+})
 
 document.getElementById("myModal").style.display = "block";
 

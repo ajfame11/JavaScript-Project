@@ -17,81 +17,78 @@ class User {
 
     // Hangling backend call for creating new user
     addUserName = () => {
-        var name = document.getElementById('userinput').value
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                const json_object = JSON.parse(this.responseText)
-                document.getElementById("player").innerHTML = json_object["name"]
-                document.getElementById("total").innerHTML = "total games :" + json_object["total_games"]
-                document.getElementById("win").innerHTML = "total wins of X :" + json_object["total_wins"]
-                document.getElementById("lose").innerHTML = "total wins of O :" + json_object["total_loses"]
-                document.getElementById("draw").innerHTML = "total draws :" + json_object["total_draw"]
-                document.getElementById("user-btns").style.display = "block";
-                document.getElementById("myModal").style.display = "none";
-            }
-            else{
-            }
-        };
-        xhttp.open("POST", "http://localhost:3000/users?username="+name, true);
-        xhttp.send();
+        let name = document.getElementById('userinput').value
+        let url = "http://localhost:3000/users?username="+name
+        postData(url, "POST")
+        .then(data => {
+            console.log(data); // JSON data parsed by `data.json()` call
+            document.getElementById("player").innerHTML = data["name"]
+            document.getElementById("total").innerHTML = "total games :" + data["total_games"]
+            document.getElementById("win").innerHTML = "total wins of X :" + data["total_wins"]
+            document.getElementById("lose").innerHTML = "total lose of O :" + data["total_loses"]
+            document.getElementById("draw").innerHTML = "total draws :" + data["total_draw"]
+            document.getElementById("user-btns").style.display = "block";
+            document.getElementById("myModal").style.display = "none";
+        });
+        
     };
     
     // Hangling backend call for Edit user
     editUserName = () => {
-        var name = document.getElementById("player").innerHTML
-        var new_name = document.getElementById('new_name').value
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                const json_object = JSON.parse(this.responseText)
-                document.getElementById("player").innerHTML = json_object["name"]
-                document.getElementById("total").innerHTML = "total games :" + json_object["total_games"]
-                document.getElementById("win").innerHTML = "total wins :" + json_object["total_wins"]
-                document.getElementById("lose").innerHTML = "total lose :" + json_object["total_loses"]
-                document.getElementById("draw").innerHTML = "total draw :" + json_object["total_draw"]
-                document.getElementById("user-btns").style.display = "block";
-                document.getElementById("edit-modal").style.display = "none";
-            }
-            else{
-            }
-        };
-        xhttp.open("PUT", "http://localhost:3000/users/:id?username="+name+"&&new_name="+new_name, true);
-        xhttp.send();
+        let name = document.getElementById("player").innerHTML
+        let new_name = document.getElementById('new_name').value
+        let url = "http://localhost:3000/users/:id?username="+name+"&&new_name="+new_name
+        postData(url, "PUT")
+        .then(data => {
+            document.getElementById("player").innerHTML = data["name"]
+            document.getElementById("total").innerHTML = "total games :" + data["total_games"]
+            document.getElementById("win").innerHTML = "total wins :" + data["total_wins"]
+            document.getElementById("lose").innerHTML = "total lose :" + data["total_loses"]
+            document.getElementById("draw").innerHTML = "total draw :" + data["total_draw"]
+            document.getElementById("user-btns").style.display = "block";
+            document.getElementById("edit-modal").style.display = "none";
+
+        })
+
     };
     
     // Hangling backend call for Delete user
     deleteUserName = () => {
-        var name = document.getElementById("player").innerHTML
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("player").innerHTML = ''
-                document.getElementById("user-btns").style.display = "none";
-            }
-        };
-        debugger;
-        xhttp.open("DELETE", "http://localhost:3000/users/:id?username="+name+"&&new_name="+new_name, true);
-        const r = xhttp.send();
-        document.getElementById("myModal").style.display = "block";
+        let name = document.getElementById("player").innerHTML
+        let url =  "http://localhost:3000/users/:id?username="+name+"&&new_name="+new_name;
+        postData(url, "DELETE")
+        .then(data => {
+            document.getElementById("player").innerHTML = ''
+            document.getElementById("user-btns").style.display = "none";
+            document.getElementById("myModal").style.display = "block";
+
+        })
     };
     
     // Hangling backend call for Save Game
     SaveScore = () => {
-        var name = document.getElementById("player").innerHTML
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            const json_object = JSON.parse(this.responseText)
-            document.getElementById("player").innerHTML = json_object["name"]
-            document.getElementById("total").innerHTML = "total games :" + json_object["total_games"]
-            document.getElementById("win").innerHTML = "total wins :" + json_object["total_wins"]
-            document.getElementById("lose").innerHTML = "total lose :" + json_object["total_loses"]
-            document.getElementById("draw").innerHTML = "total draw :" + json_object["total_draw"]
+        let name = document.getElementById("player").innerHTML
+        let url = "http://localhost:3000/scores?username="+name+"&&status="+statusDiv.innerHTML;
+        postData(url, "POST")
+        .then(data => {
+            document.getElementById("player").innerHTML = data["name"]
+            document.getElementById("total").innerHTML = "total games :" + data["total_games"]
+            document.getElementById("win").innerHTML = "total wins :" + data["total_wins"]
+            document.getElementById("lose").innerHTML = "total lose :" + data["total_loses"]
+            document.getElementById("draw").innerHTML = "total draw :" + data["total_draw"]
             document.getElementById("save-score-modal").style.display = "none";
-        }
-        };
-        xhttp.open("POST", "http://localhost:3000/scores?username="+name+"&&status="+statusDiv.innerHTML, true);
-        xhttp.send();
+
+        })
     };
+}
+async function postData(url = '', type = "POST") {
+    // Default options are marked with *
+    const response = await fetch(url, {
+    method: type, // *GET, POST, PUT, DELETE, etc.
+    headers: {
+        'Content-Type': 'application/json'
+        // 'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    });
+    return response.json(); // parses JSON response into native JavaScript objects
 }
