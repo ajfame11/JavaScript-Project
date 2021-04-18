@@ -7096,3 +7096,348 @@ Processing by ScoresController#create as */*
 Completed 200 OK in 47ms (Views: 0.9ms | ActiveRecord: 16.6ms | Allocations: 17549)
 
 
+Started POST "/users?username=jimmy" for ::1 at 2021-02-23 11:42:46 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"jimmy", "user"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jimmy"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mUser Create (1.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "jimmy"], ["created_at", "2021-02-23 16:42:46.372230"], ["updated_at", "2021-02-23 16:42:46.372230"]]
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[35m (6.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "scores" WHERE "scores"."user_id" = ? AND "scores"."wins" = ?[0m  [["user_id", 70], ["wins", 1]]
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "scores" WHERE "scores"."user_id" = ? AND "scores"."loses" = ?[0m  [["user_id", 70], ["loses", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `create'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "scores" WHERE "scores"."user_id" = ? AND "scores"."draws" = ?[0m  [["user_id", 70], ["draws", 1]]
+  ↳ app/controllers/users_controller.rb:22:in `create'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "games" WHERE "games"."user_id" = ?[0m  [["user_id", 70]]
+  ↳ app/controllers/users_controller.rb:23:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 200 OK in 66ms (Views: 0.9ms | ActiveRecord: 9.6ms | Allocations: 14017)
+
+
+Started POST "/users?username=jimmy" for ::1 at 2021-02-23 11:47:39 -0500
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"jimmy", "user"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jimmy"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "scores" WHERE "scores"."user_id" = ? AND "scores"."wins" = ?[0m  [["user_id", 70], ["wins", 1]]
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "scores" WHERE "scores"."user_id" = ? AND "scores"."loses" = ?[0m  [["user_id", 70], ["loses", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `create'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "scores" WHERE "scores"."user_id" = ? AND "scores"."draws" = ?[0m  [["user_id", 70], ["draws", 1]]
+  ↳ app/controllers/users_controller.rb:22:in `create'
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "games" WHERE "games"."user_id" = ?[0m  [["user_id", 70]]
+  ↳ app/controllers/users_controller.rb:23:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.15ms)
+Completed 200 OK in 15ms (Views: 1.4ms | ActiveRecord: 1.8ms | Allocations: 3790)
+
+
+Started POST "/scores?username=jimmy&&status=%C3%97%20has%20won!" for ::1 at 2021-02-23 11:48:27 -0500
+Processing by ScoresController#create as */*
+  Parameters: {"username"=>"jimmy", "status"=>"× has won!", "score"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jimmy"], ["LIMIT", 1]]
+  ↳ app/controllers/scores_controller.rb:14:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/scores_controller.rb:27:in `create'
+  [1m[36mScore Create (2.0ms)[0m  [1m[32mINSERT INTO "scores" ("wins", "loses", "draws", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["wins", 1], ["loses", 0], ["draws", 0], ["user_id", 70], ["created_at", "2021-02-23 16:48:27.095834"], ["updated_at", "2021-02-23 16:48:27.095834"]]
+  ↳ app/controllers/scores_controller.rb:27:in `create'
+  [1m[35m (7.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/scores_controller.rb:27:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/scores_controller.rb:28:in `create'
+  [1m[36mGame Create (2.9ms)[0m  [1m[32mINSERT INTO "games" ("win", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["win", "1"], ["user_id", 70], ["created_at", "2021-02-23 16:48:27.120062"], ["updated_at", "2021-02-23 16:48:27.120062"]]
+  ↳ app/controllers/scores_controller.rb:28:in `create'
+  [1m[35m (10.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/scores_controller.rb:28:in `create'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "scores" WHERE "scores"."user_id" = ? AND "scores"."wins" = ?[0m  [["user_id", 70], ["wins", 1]]
+  ↳ app/controllers/scores_controller.rb:29:in `create'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "scores" WHERE "scores"."user_id" = ? AND "scores"."loses" = ?[0m  [["user_id", 70], ["loses", 1]]
+  ↳ app/controllers/scores_controller.rb:30:in `create'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "scores" WHERE "scores"."user_id" = ? AND "scores"."draws" = ?[0m  [["user_id", 70], ["draws", 1]]
+  ↳ app/controllers/scores_controller.rb:31:in `create'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "games" WHERE "games"."user_id" = ?[0m  [["user_id", 70]]
+  ↳ app/controllers/scores_controller.rb:32:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 200 OK in 64ms (Views: 0.9ms | ActiveRecord: 24.6ms | Allocations: 24860)
+
+
+Started POST "/scores?username=jimmy&&status=%3Cspan%3E%E2%97%8B%20has%20won!%3C/span%3E" for ::1 at 2021-02-23 11:48:42 -0500
+Processing by ScoresController#create as */*
+  Parameters: {"username"=>"jimmy", "status"=>"<span>○ has won!</span>", "score"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jimmy"], ["LIMIT", 1]]
+  ↳ app/controllers/scores_controller.rb:14:in `create'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/scores_controller.rb:27:in `create'
+  [1m[36mScore Create (1.1ms)[0m  [1m[32mINSERT INTO "scores" ("loses", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["loses", 1], ["user_id", 70], ["created_at", "2021-02-23 16:48:42.676495"], ["updated_at", "2021-02-23 16:48:42.676495"]]
+  ↳ app/controllers/scores_controller.rb:27:in `create'
+  [1m[35m (5.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/scores_controller.rb:27:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/scores_controller.rb:28:in `create'
+  [1m[36mGame Create (1.5ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["user_id", 70], ["created_at", "2021-02-23 16:48:42.689137"], ["updated_at", "2021-02-23 16:48:42.689137"]]
+  ↳ app/controllers/scores_controller.rb:28:in `create'
+  [1m[35m (6.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/scores_controller.rb:28:in `create'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "scores" WHERE "scores"."user_id" = ? AND "scores"."wins" = ?[0m  [["user_id", 70], ["wins", 1]]
+  ↳ app/controllers/scores_controller.rb:29:in `create'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "scores" WHERE "scores"."user_id" = ? AND "scores"."loses" = ?[0m  [["user_id", 70], ["loses", 1]]
+  ↳ app/controllers/scores_controller.rb:30:in `create'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "scores" WHERE "scores"."user_id" = ? AND "scores"."draws" = ?[0m  [["user_id", 70], ["draws", 1]]
+  ↳ app/controllers/scores_controller.rb:31:in `create'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "games" WHERE "games"."user_id" = ?[0m  [["user_id", 70]]
+  ↳ app/controllers/scores_controller.rb:32:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 200 OK in 38ms (Views: 0.7ms | ActiveRecord: 16.0ms | Allocations: 18125)
+
+
+Started POST "/scores?username=jimmy&&status=Game%20is%20tied!" for ::1 at 2021-02-23 11:49:05 -0500
+Processing by ScoresController#create as */*
+  Parameters: {"username"=>"jimmy", "status"=>"Game is tied!", "score"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jimmy"], ["LIMIT", 1]]
+  ↳ app/controllers/scores_controller.rb:14:in `create'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/scores_controller.rb:27:in `create'
+  [1m[36mScore Create (1.5ms)[0m  [1m[32mINSERT INTO "scores" ("wins", "loses", "draws", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["wins", 0], ["loses", 0], ["draws", 1], ["user_id", 70], ["created_at", "2021-02-23 16:49:05.220275"], ["updated_at", "2021-02-23 16:49:05.220275"]]
+  ↳ app/controllers/scores_controller.rb:27:in `create'
+  [1m[35m (6.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/scores_controller.rb:27:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/scores_controller.rb:28:in `create'
+  [1m[36mGame Create (1.4ms)[0m  [1m[32mINSERT INTO "games" ("win", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["win", "0"], ["user_id", 70], ["created_at", "2021-02-23 16:49:05.235033"], ["updated_at", "2021-02-23 16:49:05.235033"]]
+  ↳ app/controllers/scores_controller.rb:28:in `create'
+  [1m[35m (6.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/scores_controller.rb:28:in `create'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "scores" WHERE "scores"."user_id" = ? AND "scores"."wins" = ?[0m  [["user_id", 70], ["wins", 1]]
+  ↳ app/controllers/scores_controller.rb:29:in `create'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "scores" WHERE "scores"."user_id" = ? AND "scores"."loses" = ?[0m  [["user_id", 70], ["loses", 1]]
+  ↳ app/controllers/scores_controller.rb:30:in `create'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "scores" WHERE "scores"."user_id" = ? AND "scores"."draws" = ?[0m  [["user_id", 70], ["draws", 1]]
+  ↳ app/controllers/scores_controller.rb:31:in `create'
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "games" WHERE "games"."user_id" = ?[0m  [["user_id", 70]]
+  ↳ app/controllers/scores_controller.rb:32:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 200 OK in 41ms (Views: 0.9ms | ActiveRecord: 17.8ms | Allocations: 18159)
+
+
+Started PUT "/users/:id?username=jimmy&&new_name=jimmy-two-shoes" for ::1 at 2021-02-23 11:49:35 -0500
+Processing by UsersController#update as */*
+  Parameters: {"username"=>"jimmy", "new_name"=>"jimmy-two-shoes", "id"=>":id", "user"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jimmy"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:27:in `update'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:28:in `update'
+  [1m[36mUser Update (1.5ms)[0m  [1m[33mUPDATE "users" SET "name" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["name", "jimmy-two-shoes"], ["updated_at", "2021-02-23 16:49:35.669237"], ["id", 70]]
+  ↳ app/controllers/users_controller.rb:28:in `update'
+  [1m[35m (7.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:28:in `update'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "scores" WHERE "scores"."user_id" = ? AND "scores"."wins" = ?[0m  [["user_id", 70], ["wins", 1]]
+  ↳ app/controllers/users_controller.rb:29:in `update'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "scores" WHERE "scores"."user_id" = ? AND "scores"."loses" = ?[0m  [["user_id", 70], ["loses", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `update'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "scores" WHERE "scores"."user_id" = ? AND "scores"."draws" = ?[0m  [["user_id", 70], ["draws", 1]]
+  ↳ app/controllers/users_controller.rb:31:in `update'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "games" WHERE "games"."user_id" = ?[0m  [["user_id", 70]]
+  ↳ app/controllers/users_controller.rb:32:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 200 OK in 26ms (Views: 1.0ms | ActiveRecord: 10.4ms | Allocations: 11533)
+
+
+Started DELETE "/users/:id?username=jimmy-two-shoes&&new_name=[object%20HTMLInputElement]" for ::1 at 2021-02-23 11:49:44 -0500
+Processing by UsersController#destroy as */*
+  Parameters: {"username"=>"jimmy-two-shoes", "new_name"=>"[object HTMLInputElement]", "id"=>":id", "user"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jimmy-two-shoes"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:39:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:40:in `destroy'
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."user_id" = ?[0m  [["user_id", 70]]
+  ↳ app/controllers/users_controller.rb:40:in `destroy'
+  [1m[36mGame Destroy (1.4ms)[0m  [1m[31mDELETE FROM "games" WHERE "games"."id" = ?[0m  [["id", 62]]
+  ↳ app/controllers/users_controller.rb:40:in `destroy'
+  [1m[36mGame Destroy (0.1ms)[0m  [1m[31mDELETE FROM "games" WHERE "games"."id" = ?[0m  [["id", 63]]
+  ↳ app/controllers/users_controller.rb:40:in `destroy'
+  [1m[36mGame Destroy (0.1ms)[0m  [1m[31mDELETE FROM "games" WHERE "games"."id" = ?[0m  [["id", 64]]
+  ↳ app/controllers/users_controller.rb:40:in `destroy'
+  [1m[36mScore Load (0.1ms)[0m  [1m[34mSELECT "scores".* FROM "scores" WHERE "scores"."user_id" = ?[0m  [["user_id", 70]]
+  ↳ app/controllers/users_controller.rb:40:in `destroy'
+  [1m[36mScore Destroy (0.2ms)[0m  [1m[31mDELETE FROM "scores" WHERE "scores"."id" = ?[0m  [["id", 67]]
+  ↳ app/controllers/users_controller.rb:40:in `destroy'
+  [1m[36mScore Destroy (0.1ms)[0m  [1m[31mDELETE FROM "scores" WHERE "scores"."id" = ?[0m  [["id", 68]]
+  ↳ app/controllers/users_controller.rb:40:in `destroy'
+  [1m[36mScore Destroy (0.1ms)[0m  [1m[31mDELETE FROM "scores" WHERE "scores"."id" = ?[0m  [["id", 69]]
+  ↳ app/controllers/users_controller.rb:40:in `destroy'
+  [1m[36mUser Destroy (0.1ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 70]]
+  ↳ app/controllers/users_controller.rb:40:in `destroy'
+  [1m[35m (7.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:40:in `destroy'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.04ms)
+Completed 200 OK in 32ms (Views: 1.0ms | ActiveRecord: 10.3ms | Allocations: 13512)
+
+
+Started POST "/users?username=jimmy" for ::1 at 2021-02-23 11:49:50 -0500
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"jimmy", "user"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jimmy"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mUser Create (1.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "jimmy"], ["created_at", "2021-02-23 16:49:50.667466"], ["updated_at", "2021-02-23 16:49:50.667466"]]
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[35m (8.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "scores" WHERE "scores"."user_id" = ? AND "scores"."wins" = ?[0m  [["user_id", 71], ["wins", 1]]
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "scores" WHERE "scores"."user_id" = ? AND "scores"."loses" = ?[0m  [["user_id", 71], ["loses", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `create'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "scores" WHERE "scores"."user_id" = ? AND "scores"."draws" = ?[0m  [["user_id", 71], ["draws", 1]]
+  ↳ app/controllers/users_controller.rb:22:in `create'
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "games" WHERE "games"."user_id" = ?[0m  [["user_id", 71]]
+  ↳ app/controllers/users_controller.rb:23:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.11ms)
+Completed 200 OK in 37ms (Views: 1.2ms | ActiveRecord: 11.7ms | Allocations: 10900)
+
+
+Started POST "/users?username=jimmy" for ::1 at 2021-04-18 17:56:25 -0400
+  [1m[35m (13.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"jimmy", "user"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jimmy"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "scores" WHERE "scores"."user_id" = ? AND "scores"."wins" = ?[0m  [["user_id", 71], ["wins", 1]]
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "scores" WHERE "scores"."user_id" = ? AND "scores"."loses" = ?[0m  [["user_id", 71], ["loses", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `create'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "scores" WHERE "scores"."user_id" = ? AND "scores"."draws" = ?[0m  [["user_id", 71], ["draws", 1]]
+  ↳ app/controllers/users_controller.rb:22:in `create'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "games" WHERE "games"."user_id" = ?[0m  [["user_id", 71]]
+  ↳ app/controllers/users_controller.rb:23:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.14ms)
+Completed 200 OK in 187ms (Views: 13.6ms | ActiveRecord: 3.8ms | Allocations: 10519)
+
+
+Started POST "/users?username=jimmy" for ::1 at 2021-04-18 17:57:24 -0400
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"jimmy", "user"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jimmy"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "scores" WHERE "scores"."user_id" = ? AND "scores"."wins" = ?[0m  [["user_id", 71], ["wins", 1]]
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "scores" WHERE "scores"."user_id" = ? AND "scores"."loses" = ?[0m  [["user_id", 71], ["loses", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `create'
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "scores" WHERE "scores"."user_id" = ? AND "scores"."draws" = ?[0m  [["user_id", 71], ["draws", 1]]
+  ↳ app/controllers/users_controller.rb:22:in `create'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "games" WHERE "games"."user_id" = ?[0m  [["user_id", 71]]
+  ↳ app/controllers/users_controller.rb:23:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 200 OK in 12ms (Views: 0.7ms | ActiveRecord: 1.9ms | Allocations: 3800)
+
+
+Started POST "/scores?username=jimmy&&status=%C3%97%20has%20won!" for ::1 at 2021-04-18 17:57:29 -0400
+Processing by ScoresController#create as */*
+  Parameters: {"username"=>"jimmy", "status"=>"× has won!", "score"=>{}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jimmy"], ["LIMIT", 1]]
+  ↳ app/controllers/scores_controller.rb:14:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/scores_controller.rb:27:in `create'
+  [1m[36mScore Create (5.3ms)[0m  [1m[32mINSERT INTO "scores" ("wins", "loses", "draws", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["wins", 1], ["loses", 0], ["draws", 0], ["user_id", 71], ["created_at", "2021-04-18 21:57:29.622270"], ["updated_at", "2021-04-18 21:57:29.622270"]]
+  ↳ app/controllers/scores_controller.rb:27:in `create'
+  [1m[35m (6.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/scores_controller.rb:27:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/scores_controller.rb:28:in `create'
+  [1m[36mGame Create (1.3ms)[0m  [1m[32mINSERT INTO "games" ("win", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["win", "1"], ["user_id", 71], ["created_at", "2021-04-18 21:57:29.648090"], ["updated_at", "2021-04-18 21:57:29.648090"]]
+  ↳ app/controllers/scores_controller.rb:28:in `create'
+  [1m[35m (7.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/scores_controller.rb:28:in `create'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "scores" WHERE "scores"."user_id" = ? AND "scores"."wins" = ?[0m  [["user_id", 71], ["wins", 1]]
+  ↳ app/controllers/scores_controller.rb:29:in `create'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "scores" WHERE "scores"."user_id" = ? AND "scores"."loses" = ?[0m  [["user_id", 71], ["loses", 1]]
+  ↳ app/controllers/scores_controller.rb:30:in `create'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "scores" WHERE "scores"."user_id" = ? AND "scores"."draws" = ?[0m  [["user_id", 71], ["draws", 1]]
+  ↳ app/controllers/scores_controller.rb:31:in `create'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "games" WHERE "games"."user_id" = ?[0m  [["user_id", 71]]
+  ↳ app/controllers/scores_controller.rb:32:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.15ms)
+Completed 200 OK in 91ms (Views: 1.0ms | ActiveRecord: 23.9ms | Allocations: 25772)
+
+
+Started POST "/scores?username=jimmy&&status=%3Cspan%3E%E2%97%8B%20has%20won!%3C/span%3E" for ::1 at 2021-04-18 17:57:37 -0400
+Processing by ScoresController#create as */*
+  Parameters: {"username"=>"jimmy", "status"=>"<span>○ has won!</span>", "score"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jimmy"], ["LIMIT", 1]]
+  ↳ app/controllers/scores_controller.rb:14:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/scores_controller.rb:27:in `create'
+  [1m[36mScore Create (1.4ms)[0m  [1m[32mINSERT INTO "scores" ("loses", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["loses", 1], ["user_id", 71], ["created_at", "2021-04-18 21:57:37.166465"], ["updated_at", "2021-04-18 21:57:37.166465"]]
+  ↳ app/controllers/scores_controller.rb:27:in `create'
+  [1m[35m (6.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/scores_controller.rb:27:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/scores_controller.rb:28:in `create'
+  [1m[36mGame Create (1.2ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["user_id", 71], ["created_at", "2021-04-18 21:57:37.181514"], ["updated_at", "2021-04-18 21:57:37.181514"]]
+  ↳ app/controllers/scores_controller.rb:28:in `create'
+  [1m[35m (6.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/scores_controller.rb:28:in `create'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "scores" WHERE "scores"."user_id" = ? AND "scores"."wins" = ?[0m  [["user_id", 71], ["wins", 1]]
+  ↳ app/controllers/scores_controller.rb:29:in `create'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "scores" WHERE "scores"."user_id" = ? AND "scores"."loses" = ?[0m  [["user_id", 71], ["loses", 1]]
+  ↳ app/controllers/scores_controller.rb:30:in `create'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "scores" WHERE "scores"."user_id" = ? AND "scores"."draws" = ?[0m  [["user_id", 71], ["draws", 1]]
+  ↳ app/controllers/scores_controller.rb:31:in `create'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "games" WHERE "games"."user_id" = ?[0m  [["user_id", 71]]
+  ↳ app/controllers/scores_controller.rb:32:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 200 OK in 41ms (Views: 0.6ms | ActiveRecord: 17.3ms | Allocations: 17519)
+
+
+Started POST "/scores?username=jimmy&&status=Game%20is%20tied!" for ::1 at 2021-04-18 17:57:48 -0400
+Processing by ScoresController#create as */*
+  Parameters: {"username"=>"jimmy", "status"=>"Game is tied!", "score"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jimmy"], ["LIMIT", 1]]
+  ↳ app/controllers/scores_controller.rb:14:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/scores_controller.rb:27:in `create'
+  [1m[36mScore Create (1.7ms)[0m  [1m[32mINSERT INTO "scores" ("wins", "loses", "draws", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["wins", 0], ["loses", 0], ["draws", 1], ["user_id", 71], ["created_at", "2021-04-18 21:57:48.973361"], ["updated_at", "2021-04-18 21:57:48.973361"]]
+  ↳ app/controllers/scores_controller.rb:27:in `create'
+  [1m[35m (6.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/scores_controller.rb:27:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/scores_controller.rb:28:in `create'
+  [1m[36mGame Create (1.4ms)[0m  [1m[32mINSERT INTO "games" ("win", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["win", "0"], ["user_id", 71], ["created_at", "2021-04-18 21:57:48.988642"], ["updated_at", "2021-04-18 21:57:48.988642"]]
+  ↳ app/controllers/scores_controller.rb:28:in `create'
+  [1m[35m (6.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/scores_controller.rb:28:in `create'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "scores" WHERE "scores"."user_id" = ? AND "scores"."wins" = ?[0m  [["user_id", 71], ["wins", 1]]
+  ↳ app/controllers/scores_controller.rb:29:in `create'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "scores" WHERE "scores"."user_id" = ? AND "scores"."loses" = ?[0m  [["user_id", 71], ["loses", 1]]
+  ↳ app/controllers/scores_controller.rb:30:in `create'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "scores" WHERE "scores"."user_id" = ? AND "scores"."draws" = ?[0m  [["user_id", 71], ["draws", 1]]
+  ↳ app/controllers/scores_controller.rb:31:in `create'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "games" WHERE "games"."user_id" = ?[0m  [["user_id", 71]]
+  ↳ app/controllers/scores_controller.rb:32:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 200 OK in 42ms (Views: 0.7ms | ActiveRecord: 17.3ms | Allocations: 18182)
+
+
+Started POST "/users?username=jimmy" for ::1 at 2021-04-18 18:00:23 -0400
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"jimmy", "user"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "jimmy"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "scores" WHERE "scores"."user_id" = ? AND "scores"."wins" = ?[0m  [["user_id", 71], ["wins", 1]]
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "scores" WHERE "scores"."user_id" = ? AND "scores"."loses" = ?[0m  [["user_id", 71], ["loses", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `create'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "scores" WHERE "scores"."user_id" = ? AND "scores"."draws" = ?[0m  [["user_id", 71], ["draws", 1]]
+  ↳ app/controllers/users_controller.rb:22:in `create'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "games" WHERE "games"."user_id" = ?[0m  [["user_id", 71]]
+  ↳ app/controllers/users_controller.rb:23:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 200 OK in 10ms (Views: 0.7ms | ActiveRecord: 1.5ms | Allocations: 3783)
+
+
